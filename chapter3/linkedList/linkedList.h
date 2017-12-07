@@ -8,6 +8,11 @@ using namespace std;
 class LinkedList{
 
 public:
+LinkedList();
+void print() const;
+void insert_data(int index, int data);
+
+private:
 typedef struct node {
 
 	// ctr
@@ -23,15 +28,6 @@ typedef struct node {
 	int data;
 	struct shared_ptr<node> next;
 } node_t;
-
-
-LinkedList();
-void print() const;
-
-void insert_data(int index, int data);
-
-
-private:
 
 shared_ptr<node_t> d_pt_head;
 
