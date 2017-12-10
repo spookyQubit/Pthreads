@@ -3,13 +3,17 @@
 
 #include <memory>
 
+extern "C"{
+#include <pthread.h>
+}
+
 using namespace std;
 
 class LinkedList{
 
 public:
 LinkedList();
-void print() const;
+void print();
 void insert_data(int index, int data);
 
 private:
@@ -30,8 +34,7 @@ typedef struct node {
 } node_t;
 
 shared_ptr<node_t> d_pt_head;
-
-
+pthread_mutex_t d_mutex;
 };
 
 #endif
